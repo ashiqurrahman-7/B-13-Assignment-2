@@ -1,0 +1,71 @@
+
+.section {
+  max-width: 1152px; /* Tailwind max-w-6xl */
+  margin: 0 auto;
+  padding: 64px 16px; /* py-16 px-4 */
+}
+
+.section-title {
+  font-size: 3rem; /* text-5xl */
+  font-weight: 700; /* font-bold */
+  text-align: center;
+  margin-bottom: 36px; /* mb-9 */
+}
+
+/* ===== Container Grid ===== */
+.container {
+  display: grid;
+  gap: 20px; /* same as gap-5 */
+  grid-template-columns: 1fr; /* mobile default */
+}
+
+
+
+
+/* ===== Item Styling ===== */
+.item {
+  background-color: #2a0d4d; /* same as Tailwind bg-[#2a0d4d] */
+  border-radius: 16px; /* rounded-2xl */
+  padding: 30px;
+  color: #e0bbff; /* text-purple-200 equivalent */
+}
+
+.item h3 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  margin: 12px 0 8px; /* mt-3 mb-2 */
+}
+
+.item p {
+  font-size: 0.875rem; /* text-sm */
+}
+
+/* ===== Responsive: Medium (md ≥ 768px) ===== */
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* item-1 full width in medium */
+  .item-1 {
+    grid-column: span 2;
+  }
+}
+
+/* ===== Responsive: Large (lg ≥ 1024px) ===== */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "items-1 items-2 items-2"
+      "items-1 items-3 items-3"
+      "items-4 items-4 items-5";
+  }
+.item-1 { grid-area: items-1; }
+  .item-2 { grid-area: items-2; }
+  .item-3 { grid-area: items-3; }
+  .item-4 { grid-area: items-4; }
+  .item-5 { grid-area: items-5; }
+  
+}
+
